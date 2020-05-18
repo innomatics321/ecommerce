@@ -21,7 +21,6 @@ pipeline {
 
     stage('deploy') {
       steps {
-        bat 'c'
         bat 'xcopy "C:\\Program Files (x86)\\Jenkins\\workspace\\myntra_master\\target" "C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps"/y'
       }
     }
