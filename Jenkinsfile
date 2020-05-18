@@ -32,7 +32,8 @@ pipeline {
 
     stage('deploy') {
       steps {
-        bat 'xcopy "C:\\Program Files (x86)\\Jenkins\\workspace\\ecommerce_master\\target\\ecommerce.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps"'
+        bat 'xcopy "C:\\Program Files (x86)\\Jenkins\\workspace\\ecommerce_master\\target\\ecommerce.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps" /s'
+        bat 'REM del C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps\\*.war'
       }
     }
 
