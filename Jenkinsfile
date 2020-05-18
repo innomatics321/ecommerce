@@ -8,8 +8,19 @@ pipeline {
     }
 
     stage('compile') {
-      steps {
-        bat 'mvn install'
+      parallel {
+        stage('compile') {
+          steps {
+            bat 'mvn compile'
+          }
+        }
+
+        stage('build') {
+          steps {
+            bat 'mvn package'
+          }
+        }
+
       }
     }
 
